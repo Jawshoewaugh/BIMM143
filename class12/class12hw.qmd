@@ -1,0 +1,45 @@
+---
+title: "Class 12 HW"
+author: "Joshua Mac | A17016359"
+format: pdf
+---
+**Reading the final file into R and interpreting**
+
+**Q13**
+```{r}
+url<-"https://bioboot.github.io/bggn213_W19/class-material/rs8067378_ENSG00000172057.6.txt"
+data<-read.table(url)
+data
+```
+We aim to determine the sample size for each genotype (A|G, A|A, and G|G) and their corresponding median expression levels.
+```{r}
+# Reading the data
+summary(data)
+```
+Now, individually:
+```{r}
+table(data$geno)
+```
+> A13a. Therefore, the sample size for the A|A genotype is 108, for A/G is 233, and for G|G is 121.
+
+Their corresponding median expression levels can be determined by:
+```{r}
+summary(data$exp)
+boxplot_stats<- boxplot(exp~geno, data=data, plot=F)
+medians<- boxplot_stats$stats[3,]
+
+names(medians) <- levels(data$geno)
+medians
+```
+> A13b. Their median expression levels are approximately 31.25, 25.06, and 20.07, respectively.
+
+**Q14**
+To make a boxplot, we will use the following code. With this, we aim to make an inference about the two homozygous genotypes.
+```{r}
+boxplot(exp~geno, data=data,
+main = "Gene Expression by Genotype",
+xlab = "Genotype",
+ylab = "Expression Level")
+
+```
+> A14. The median expression level for genotype G|G is significantly lower than A|A's, suggesting that the SNP does affect the gene expression of ORMDL3. However, their whiskers overlap substantially and further statistical analysis would further distinguish the two. Their medians are and IQRs are not overlapping but their whiskers are, final conclusion: SNP most likely does not affect the gene expression of ORMDL3.
