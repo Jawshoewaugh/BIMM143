@@ -1,7 +1,4 @@
-# BIMM143
-BIMM143RStudio
-
-# This repo is for my UCSD bioinformatics class. 
+# This repo is for my UCSD bioinformatics class - BIMM 143. 
 
 **Everything I did!**
 
@@ -35,6 +32,9 @@ and this one was probably the most troublesome.
 Class 18 - [Mini Project: Investigating Pertussis Resurgence](https://github.com/Jawshoewaugh/BIMM143/blob/main/class18/class17.qmd)
 
 This was my bioinformatics journey! As difficult as it was, I had great help, and I had fun. I learned to code, visualize data, work with datasets in R, search databases, search *against* databases, how to connect to Clouds, and GitHub!
+
+Best,
+Josh
 
 
 
